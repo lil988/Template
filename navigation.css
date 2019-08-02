@@ -1,0 +1,96 @@
+/*
+File Name: navigation.css
+Date: 07/29/2019
+Programmer: Juana Maquin
+*/
+
+/* Based on http://kmturley.blogspot.com/2014/06/responsive-mobile-dropdown-navigation.html */
+/* Modified for mobile-first design */
+
+/* Set up menu */
+
+/* remove bullet in front of list items in menu */
+
+div,
+section,
+header,
+footer,
+main,
+article,
+aside {
+	box-sizing: border-box;
+}
+
+
+/* header wrapper */
+.wrapper {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 10px 2%;
+}
+
+/*-----Navbar Style------*/
+.navbar-default {
+	background-color: #f8f8f8;
+	border-color: #f58e4e;
+}
+
+.navbar-default .navbar-toggle {
+	border-color: #ddd;
+	background-color: #eee;
+}
+
+.naavbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focurs {
+	background-color: rgb(204, 204, 204);
+}
+)
+/*------Grid-----*/
+header {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+}
+
+#company-logo {
+	margin: 1em 1em 1em 0;
+	font-weight: bold;
+	font-size: 2em;
+	text-shadow: 2px 2px #f58e4e;
+	margin-bottom: 0;
+	margin-top: 0;
+	line-height: 2em;
+	grid-column: 1 / 2;
+}
+
+#social-icons {
+	grid-column: 2 / 3;
+	border: 2px solid black;
+	padding-right: 15px;
+}
+
+#social-icon p {
+	text-align: right;
+}
+
+nav {
+	grid-column: 1 / 3;
+}
+
+/*font awosome--*/
+.svg-inline--fa {
+	font-size: 2em;
+	margin-right: 5px;
+}
+
+.svg-inline--fa {
+	font-size: 2em;
+	margin-right: 10px;
+}
+
+a .svg-inline--fa {
+	color: #000;
+}
+
+a:hover .svg-inline--fa {
+	color: lightblue;
+}

@@ -1,0 +1,156 @@
+/*
+File Name: style.less
+Date: 07/29/2019
+Programmer: Juana Maquin
+*/
+
+/* INSERT LESS VARIABLES HERE */
+
+/* colors */
+
+@baseColor: beige;
+
+@mBgColor: @baseColor;
+@tBgColor: spin(@mBgColor, 80);
+@dBgColor: spin(@tBgColor, 80);
+@footerColor: #151717;
+@referencesHoverColor: #151717;
+@referencesBgColor: #fff;
+
+/* sizes */
+
+@mFontSize: 16px;
+@tFontSize: (@mFontSize * .9375);
+@dFontSize: (@tFontSize * .875);
+@h1FontSize: 1.25em;
+@h2FontSize: (@h1FontSize * 40);
+@h3FontSize: (@h1FontSize * .99);
+@summaryFontSize: .6em;
+@summaryFirstFontSize: 1.5em;
+@designerFontSize: .75em;
+@contactFontSize: 0.9em;
+
+/* margins */
+
+@pHeadingMargin: 1em 1em 1em 0;
+@mBodyMargin: 0 1em;
+@tBodyMargin: 0 3em;
+@dBodyMargin: 0 4em;
+@olLiLeftMargin: 0;
+
+@import "mixins.less";
+
+/* SELECTORS */
+
+/* MOBILE STYLES */
+
+body {
+	#tp_mixins > .commonProperties(@mBgColor, @mFontSize, @mBodyMargin);
+	font-family: "Open Sans", sans-serif;
+	line-height: 1.5em;
+}
+
+p {
+	margin: @pHeadingMargin;
+}
+
+h1 {
+	margin: @pHeadingMargin;
+	font-weight: bold;
+	#tp_mixins > .sizeProperties(@h1FontSize);
+	text-shadow: 2px 2px red;
+	margin-bottom: 0;
+	margin-top: 0;
+	line-height: 1em;
+}
+
+
+h2 {
+	margin: @pHeadingMargin;
+	font-weight: bold;
+	#tp_mixins > .sizeProperties(@h3FontSize);
+	text-align: center;
+	color: #f7b852;
+}
+
+h3 {
+	margin: @pHeadingMargin;
+	font-weight: bold;
+	#tp_mixins > .sizeProperties(@h3FontSize);
+	font-style: italic;
+	color: #15324a;
+}
+
+li {
+	line-height: 1.5em;
+}
+
+footer {
+	#tp_mixins > .colorProperties(@footerColor);
+	margin-bottom: 10px;
+	font-style: italic;
+	text-align: center;
+}
+
+#references1 {
+	
+	ul {
+		list-style-type: disc;
+		list-style-position: inside;
+		border: 2px solid #f58e4e;
+	    padding: 1em;
+	}
+
+	a {
+		&:link {
+			text-decoration: none;
+		}
+
+		&:visited {
+			text-decoration: none;
+		}
+
+		&:hover {
+			#tp_mixins > .colorProperties(@referencesHoverColor);
+			background-color: @referencesBgColor;
+
+		}
+	}
+}
+
+#contact1 {
+	#tp_mixins > .sizeProperties(@contactFontSize);
+	letter-spacing: 3px;
+}
+
+/* TABLET STYLES */
+
+@media only screen and (min-width: 600px) {
+
+	body {
+		#tp_mixins > .commonProperties(@tBgColor, @tFontSize, @tBodyMargin);
+	}
+
+	h2 {
+		margin-top: 0;
+		margin-bottom: .8em;
+	}
+
+	h3 {
+		margin-top: 0;
+	}
+
+	ul {
+		margin-bottom: 1em;
+	}
+
+}
+
+/* DESKTOP STYLES */
+
+@media only screen and (min-width: 1025px) {
+
+	body {
+		#tp_mixins > .commonProperties(@dBgColor, @dFontSize, @dBodyMargin);
+	}
+}
